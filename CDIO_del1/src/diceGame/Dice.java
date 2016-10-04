@@ -14,9 +14,8 @@ public class Dice {
 	
 	// roll the die twice and save values in value1 and value2
 	public void rollDice(){
-		Dice dice;
-		value1 = dice.roll();
-		value2 = dice.roll();
+		value1 = this.roll();
+		value2 = this.roll();
 	}
 	
 	public int getValue1(){
