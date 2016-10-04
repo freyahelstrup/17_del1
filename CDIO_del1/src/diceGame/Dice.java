@@ -25,4 +25,9 @@ public class Dice {
 	public int getValue2(){
 		return value2;
 	}
+	
+	public void setValues(int value1, int value2){
+		this.value1 = value1;
+		this.value2 = value2;
+	}
 }
