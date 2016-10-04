@@ -42,12 +42,12 @@ public class DiceTest {
 	@Test
 	public void testDiceBetween1And6() {
 		boolean diceBetween1And6 = false;
-		int n = 60000;
+		int n = 30000;
 		Dice dice = new Dice();
 		
 		//Loop running n times
 		for (int i=1;i<=n;i++){
-			dice.rollDice();
+			dice.rollDice(); //Rolls 2 dice
 			if ((dice.getValue1() == 1 
 					|| dice.getValue1() == 2
 					|| dice.getValue1() == 3
@@ -122,12 +122,13 @@ public class DiceTest {
 			}
 		}
 
-//		System.out.println("Antal 1'ere ud af " + n + " kast: " + r1);
-//		System.out.println("Antal 2'ere ud af " + n + " kast: " + r2);
-//		System.out.println("Antal 3'ere ud af " + n + " kast: " + r3);
-//		System.out.println("Antal 4'ere ud af " + n + " kast: " + r4);
-//		System.out.println("Antal 5'ere ud af " + n + " kast: " + r5);
-//		System.out.println("Antal 6'ere ud af " + n + " kast: " + r6);
+		System.out.println("Antal 1'ere ud af " + n + " kast: " + counter1);
+		System.out.println("Antal 2'ere ud af " + n + " kast: " + counter2);
+		System.out.println("Antal 3'ere ud af " + n + " kast: " + counter3);
+		System.out.println("Antal 4'ere ud af " + n + " kast: " + counter4);
+		System.out.println("Antal 5'ere ud af " + n + " kast: " + counter5);
+		System.out.println("Antal 6'ere ud af " + n + " kast: " + counter6);
+		System.out.println("Sum af counters: " + (counter1+counter2+counter3+counter4+counter5+counter6));
 		
 		final double EXPECTED, MAX, MIN, ACCEPTABLEDIFFERENCE;
 		EXPECTED = (n*2.0)*(1.0/6.0); //We expect 1/6 of the rolls to be each value
