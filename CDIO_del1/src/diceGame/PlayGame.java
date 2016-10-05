@@ -16,6 +16,7 @@ public class PlayGame {
 		Dice previousDice = new Dice();
 		
 		boolean winnerFound = false;
+		boolean firstTurn = true;
 		boolean lastTurn = false;
 		boolean draw = false;
 			
@@ -54,7 +55,7 @@ public class PlayGame {
 			}
 			// The player shall win, if he/she throws a pair of sixes twice in a row.
 			else if ((dice1 == 6 && dice2 == 6) && 
-						(currentPlayer.getPreviousResult() == 6 && currentPlayer.getPreviousResult() == 6) ) {
+						(currentPlayer.getPreviousResult() == 6 && currentPlayer.getPreviousResult() == 6) && firstTurn == false) {
 				winnerFound = true;
 			}
 			// Add the score to the players scorecount
@@ -90,6 +91,9 @@ public class PlayGame {
 					p1.setMyTurn(true);
 					p2.setMyTurn(false);
 				}
+			
+			// First turn is now over
+			firstTurn = false;
 			
 			//Print the score for both players
 			GUI.showMessage(p1 + "\t\t\t" + p2);
