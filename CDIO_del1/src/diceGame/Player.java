@@ -2,53 +2,54 @@ package diceGame;
 
 public class Player {
 
-	private int id, score, prevTurn1, prevTurn2;
-	private boolean isTurn;
+	//Variables
+	private int score, id;
+	private Dice previousResult = new Dice();
+	private boolean myTurn;
 	
-	public Player (int id, int score, boolean isTurn)
+	
+	public Player (int id, int score, boolean myTurn)
 	{
+
 		this.id = id;
 		this.score = score;
-		this.isTurn = isTurn;
+		this.myTurn = myTurn;
+		
 	}
-
-	public void addScore(int point){
-		this.score += point;
+	
+	//Returns, as a boolean, whether or not it is the given player's turn
+	public boolean getMyTurn(){
+		return myTurn;
 	}
-
+	
+	//Gives turn to the given player
+	public void setMyTurn(boolean myTurn){
+		this.myTurn = myTurn;
+	}
+	
+	//Returns the player id
+	public int getPlayerid(){
+		return id;
+		
+	}
+	//Returns the score
+	public int getScore(){
+		return score;
+	
+	}
+	
+	//Sets the score of the given player
 	public void setScore(int score){
 		this.score = score;
 	}
-
-	public void setIsTurn(boolean isTurn){
-		this.isTurn = isTurn;
-	}
-
-	public void setPrevTurn(int prevTurn1, int prevTurn2){
-		this.prevTurn1 = prevTurn1;
-		this.prevTurn2 = prevTurn2;
+	
+	//Sets the previous result 
+	public void setPreviousResult(int value1, int value2){
+		previousResult.setValues(value1, value2);
 	}
 	
-	public int getId(){
-		return id;
-	}
-
-	public int getScore(){
-		return score;
-	}
-	public boolean getIsTurn(){
-		return isTurn;
-	}
-
-	public int getPrevTurn1(){
-		return prevTurn1;
-	}
-
-	public int getPrevTurn2(){
-		return prevTurn2;
-	}
-	
-	public String toString(){
-		return "Spiller " + id + " har " + score + " point.";
+	//Returns the previous result
+	public getPreviousResult(){
+		return previousResult;
 	}
 }
