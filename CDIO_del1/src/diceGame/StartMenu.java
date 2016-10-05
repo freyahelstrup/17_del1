@@ -1,6 +1,7 @@
 package diceGame;
 import java.util.Scanner;
 
+
 public class StartMenu {
 	
 	//Calls the class "PlayGame" to send and retrieve information
