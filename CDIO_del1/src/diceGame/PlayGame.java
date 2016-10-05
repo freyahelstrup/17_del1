@@ -31,7 +31,7 @@ public class PlayGame {
 			
 			//Print who's turn it is
 			int nextPlayerId;
-			if (currentPlayer = p1) {
+			if (currentPlayer == p1) {
 				nextPlayerId = p1.getId;																				// getId is missing in playerinfo
 			}
 			else {
@@ -96,7 +96,7 @@ public class PlayGame {
 			
 			//Define a winner.
 			//if winner = -1, it shall be a draw
-			player winner = new Player(0,0,false);
+			Player winner = new Player(0,0,false);
 			
 			if (lastTurn == false) {
 				
