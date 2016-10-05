@@ -16,7 +16,7 @@ public class PlayGame {
 		Dice previousDice = new Dice();
 		
 		boolean winnerFound = false;
-		boolean lastTurn == false;
+		boolean lastTurn = false;
 			
 		// play game
 		while (winnerFound == false) {
