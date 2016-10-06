@@ -49,7 +49,7 @@ public class Player {
 	}
 	
 	//Returns the previous result
-	public getPreviousResult(){
+	public Dice getPreviousResult(){
 		return previousResult;
 	}
 }
