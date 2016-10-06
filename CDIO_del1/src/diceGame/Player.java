@@ -52,4 +52,8 @@ public class Player {
 	public Dice getPreviousResult(){
 		return previousResult;
 	}
+	
+	public String toString(){
+		return "Spiller " + id + " har " + score + " point";
+	}
 }
