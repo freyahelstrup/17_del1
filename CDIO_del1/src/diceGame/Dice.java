@@ -31,7 +31,7 @@ public class Dice {
 		this.value2 = value2;
 	}
 	
-	public boolean equals(int value1, int value2){
+	public boolean equals(){
 		return (value1 == value2);
 	}
 	
