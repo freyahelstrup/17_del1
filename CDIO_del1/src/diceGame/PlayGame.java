@@ -34,10 +34,10 @@ public class PlayGame {
 			//Print who's turn it is
 			int nextPlayerId;
 			if (currentPlayer == p1) {
-				nextPlayerId = p1.getPlayerId();																				
+				nextPlayerId = p1.getPlayerid();																				
 			}																													 
 			else {
-				nextPlayerId = p2.getPlayerId();
+				nextPlayerId = p2.getPlayerid();
 			}
 			
 			GUI.getUserButtonPressed("Det er spiller " + nextPlayerId + "'s tur. Slå terninger.");
@@ -55,7 +55,7 @@ public class PlayGame {
 			}
 			// The player shall win, if he/she throws a pair of sixes twice in a row.
 			else if ((dice1 == 6 && dice2 == 6) && 
-						(currentPlayer.getPreviousResult() == 6 && currentPlayer.getPreviousResult() == 6) && firstTurn == false) {
+						(currentPlayer.getPreviousResult() == previousDice) && firstTurn == false) {			// Currently not working - needs a fix
 				winnerFound = true;
 			}
 			// Add the score to the players scorecount
@@ -66,9 +66,9 @@ public class PlayGame {
 				//Save the result of the dice to the specific player
 				previousDice.setValues(dice1, dice2);
 				if (currentPlayer == p1) {
-					p1.setPreviousResult(previousDice);
+					p1.setPreviousResult(dice1, dice2);
 				}else {
-					p2.setPreviousResult(previousDice);
+					p2.setPreviousResult(dice1, dice2);
 				}
 			}
 			
@@ -129,7 +129,9 @@ public class PlayGame {
 			// Print the winner
 			if (draw == true) {
 				GUI.showMessage("Spillet er uafgjort! Scoren for begge spillere er: " + p1.getScore());
-			}else GUI.showMessage("Vinderen er: Spiller " + winner.getId() + "!");
+			}else if (winnerFound == true) { 
+				GUI.showMessage("Vinderen er: Spiller " + winner.getPlayerid() + "!");
+			}
 		}
 	}
 }
