@@ -6,6 +6,7 @@ import org.junit.Test;
 
 public class DiceTest {
 	/***************************************
+ 	TC01
  	Test to see if the method setValues
  	work as intended.
 	**************************************/
@@ -36,6 +37,7 @@ public class DiceTest {
 	}
 	
 	/***************************************
+ 	TC02
  	Test to see if dice return values are 
  	integer 1,2,3,4,5 or 6.
 	**************************************/
@@ -75,6 +77,7 @@ public class DiceTest {
 	}
 
 	/***************************************
+ 	TC03
  	Test to see if dice returns the 6 values
  	randomly, so none is more frequent.
  	We test 60,000 rolls, and therefore 
@@ -152,6 +155,11 @@ public class DiceTest {
 		
 		assertEquals(true,resultApproved);
 	}
+	/***************************************
+ 	TC04
+ 	Test of method equals(), that compares 
+ 	the values of the two integers in Dice
+	**************************************/
 	@Test
 	public void testEquals() {
 		Dice dice = new Dice();
@@ -165,7 +173,7 @@ public class DiceTest {
 		
 		//We test if the boolean is false, when value1
 		//and value2 are not equal
-		assertEquals(validResult,dice.equals(dice.getValue1(),dice.getValue2()));
+		assertEquals(validResult,dice.equals());
 
 		/******** TEST SET 2 ********/
 		value1 = 1;		value2 = 1;		validResult = true;
@@ -174,8 +182,13 @@ public class DiceTest {
 		
 		//We test if the boolean is true, when value1
 		//and value2 are equal
-		assertEquals(validResult,dice.equals(dice.getValue1(),dice.getValue2()));
+		assertEquals(validResult,dice.equals());
 	}
+	/***************************************
+ 	TC05
+ 	Test of method sum(), that sums value1
+ 	and value2 of the dice
+	**************************************/
 	@Test
 	public void testSum() {
 		Dice dice = new Dice();
