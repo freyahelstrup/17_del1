@@ -34,10 +34,10 @@ public class PlayGame {
 			//Print who's turn it is
 			int nextPlayerId;
 			if (currentPlayer == p1) {
-				nextPlayerId = p1.getId();																				// getId is missing in playerinfo
-			}
+				nextPlayerId = p1.getPlayerId();																				
+			}																													 
 			else {
-				nextPlayerId = p2.getId();
+				nextPlayerId = p2.getPlayerId();
 			}
 			
 			GUI.getUserButtonPressed("Det er spiller " + nextPlayerId + "'s tur. Slå terninger.");
