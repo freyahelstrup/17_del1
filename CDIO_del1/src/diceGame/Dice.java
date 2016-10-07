@@ -30,4 +30,12 @@ public class Dice {
 		this.value1 = value1;
 		this.value2 = value2;
 	}
+	
+	public boolean equals(int value1, int value2){
+		return (value1 == value2);
+	}
+	
+	public int sum(){
+		return (value1 + value2);
+	}
 }
