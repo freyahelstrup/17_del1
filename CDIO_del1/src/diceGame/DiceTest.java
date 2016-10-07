@@ -152,4 +152,52 @@ public class DiceTest {
 		
 		assertEquals(true,resultApproved);
 	}
+	@Test
+	public void testEquals() {
+		Dice dice = new Dice();
+		int value1, value2;
+		boolean validResult;
+
+		/******** TEST SET 1 ********/
+		value1 = 1;		value2 = 6;		validResult = false;
+		//We set values of dice to above integers
+		dice.setValues(value1, value2);
+		
+		//We test if the boolean is false, when value1
+		//and value2 are not equal
+		assertEquals(validResult,dice.equals(dice.getValue1(),dice.getValue2()));
+
+		/******** TEST SET 2 ********/
+		value1 = 1;		value2 = 1;		validResult = true;
+		//We set values of dice to above integers
+		dice.setValues(value1, value2);
+		
+		//We test if the boolean is true, when value1
+		//and value2 are equal
+		assertEquals(validResult,dice.equals(dice.getValue1(),dice.getValue2()));
+	}
+	@Test
+	public void testSum() {
+		Dice dice = new Dice();
+		int value1, value2, validResult;
+
+		/******** TEST SET 1 ********/
+		value1 = 1;		value2 = 6;		validResult = 7;
+		//We set values of dice to above integers
+		dice.setValues(value1, value2);
+
+		//We test if the sum is equal to
+		//the sum of the to values
+		assertEquals(validResult,dice.sum());
+
+		/******** TEST SET 2 ********/
+		value1 = 1;		value2 = 1;		validResult = 2;
+		//We set values of dice to above integers
+		dice.setValues(value1, value2);
+		
+		//We test if the sum is equal to
+		//the sum of the to values
+		assertEquals(validResult,dice.sum());
+	}
+	
 }
