@@ -5,9 +5,6 @@ import java.util.Scanner;
 
 public class StartMenu {
 	
-	//Calls the class "PlayGame" to send and retrieve information
-	PlayGame game = new PlayGame();
-	
 //	//Method to set number of players participating
 //	private void setPlayerAmount() {
 //		
@@ -47,7 +44,8 @@ public class StartMenu {
 				switch(answer){
 				
 					case "j":
-						
+						//Calls the class "PlayGame" to send and retrieve information
+						PlayGame game = new PlayGame();
 						//Sets number of players and runs the playgame method in the PlayGame() class
 //						this.setPlayerAmount();
 						System.out.println("");
